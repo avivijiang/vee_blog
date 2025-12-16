@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowUpRight, Github, Twitter, Linkedin, Briefcase, Cat } from "lucide-react";
+import { ArrowUpRight, Github, Twitter, Linkedin, Briefcase, Cat, MapPin } from "lucide-react";
 import { Link } from "wouter";
 import avatarImage from "@assets/generated_images/professional_minimalist_avatar.png";
 import travelImage from "@assets/generated_images/scenic_mountain_landscape_for_travel_blog.png";
@@ -44,6 +44,12 @@ export function BentoGrid() {
           <h1 className="text-3xl font-display font-bold mb-2 tracking-tight">
             Hi, I'm Alex.
           </h1>
+          
+          <div className="flex items-center gap-1.5 mb-4 w-fit px-3 py-1.5 rounded-full bg-neutral-100 dark:bg-white/10 border border-neutral-200 dark:border-white/5">
+             <MapPin size={12} className="text-neutral-500 dark:text-neutral-400" />
+             <span className="text-xs font-semibold text-neutral-600 dark:text-neutral-300 uppercase tracking-wide">Hangzhou, China</span>
+          </div>
+
           <p className="text-muted-foreground text-sm leading-relaxed">
             I'm a Design Engineer exploring the intersection of AI, design, and
             storytelling. Currently building digital gardens and breaking things.
