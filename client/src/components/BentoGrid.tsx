@@ -1,10 +1,11 @@
 import { motion } from "framer-motion";
-import { ArrowUpRight, Github, Twitter, Linkedin, Briefcase } from "lucide-react";
+import { ArrowUpRight, Github, Twitter, Linkedin, Briefcase, Cat } from "lucide-react";
 import { Link } from "wouter";
 import avatarImage from "@assets/generated_images/professional_minimalist_avatar.png";
 import travelImage from "@assets/generated_images/scenic_mountain_landscape_for_travel_blog.png";
 import aiImage from "@assets/generated_images/abstract_digital_art_for_ai_blog_section.png";
 import resumeImage from "@assets/generated_images/minimalist_workspace_photography_for_resume_card.png";
+import catImage from "@assets/generated_images/cute_cat_portrait_for_personal_blog.png";
 
 const container = {
   hidden: { opacity: 0 },
@@ -62,23 +63,47 @@ export function BentoGrid() {
         <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-blue-500/10 to-purple-500/10 blur-3xl rounded-full -mr-16 -mt-16 pointer-events-none" />
       </motion.div>
 
-      {/* Let's Talk - Position 2 (Top Right) - 2x1 */}
+      {/* Let's Talk - Position 2 (Top Right) - 1x1 */}
       <motion.div
         variants={item}
-        className="col-span-1 md:col-span-2 bg-[#2a2a2a] text-white rounded-3xl p-6 flex flex-row justify-between items-center group cursor-pointer min-h-[160px]"
+        className="col-span-1 bg-[#2a2a2a] text-white rounded-3xl p-6 flex flex-col justify-between group cursor-pointer min-h-[160px]"
       >
-          <div className="space-y-2">
-            <h3 className="font-display font-bold text-3xl">Let's Talk</h3>
-            <p className="text-xs text-white/60">
-              Open for collaborations
-            </p>
+          <div className="flex justify-between items-start">
+             <div className="w-8 h-8 bg-white/10 rounded-full flex items-center justify-center group-hover:bg-white group-hover:text-black transition-colors">
+                <ArrowUpRight size={16} />
+             </div>
           </div>
-          <div className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center group-hover:bg-white group-hover:text-black transition-colors">
-            <ArrowUpRight size={24} />
+          <div>
+            <h3 className="font-display font-bold text-lg leading-tight">Let's Talk</h3>
+            <p className="text-[10px] text-white/60 mt-1">
+              Collaborate
+            </p>
           </div>
       </motion.div>
 
-      {/* Resume Card - Position 3 (Middle Right) - 2x1 */}
+      {/* My Cat - Position 3 (Top Right) - 1x1 */}
+      <motion.div
+        variants={item}
+        className="col-span-1 bg-neutral-100 rounded-3xl overflow-hidden relative group cursor-pointer min-h-[160px]"
+      >
+        <Link href="/cat">
+          <div className="absolute inset-0 block">
+             <img
+              src={catImage}
+              alt="My Cat"
+              className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+            />
+            <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors" />
+            <div className="absolute bottom-4 left-4">
+               <div className="w-8 h-8 bg-white/90 backdrop-blur rounded-full flex items-center justify-center shadow-sm">
+                  <Cat size={16} className="text-black" />
+               </div>
+            </div>
+          </div>
+        </Link>
+      </motion.div>
+
+      {/* Resume Card - Position 4 (Middle Right) - 2x1 */}
       <motion.div
         variants={item}
         className="col-span-1 md:col-span-2 bg-white border rounded-3xl overflow-hidden relative group cursor-pointer min-h-[200px]"
@@ -111,7 +136,7 @@ export function BentoGrid() {
         </Link>
       </motion.div>
 
-      {/* Blog/AI Card - Position 4 (Bottom Left) - 2x1 */}
+      {/* Blog/AI Card - Position 5 (Bottom Left) - 2x1 */}
       <motion.div
         variants={item}
         className="col-span-1 md:col-span-2 bg-secondary rounded-3xl overflow-hidden relative group cursor-pointer min-h-[200px]"
@@ -141,7 +166,7 @@ export function BentoGrid() {
         </Link>
       </motion.div>
 
-      {/* Travel Card - Position 5 (Bottom Right) - 2x1 */}
+      {/* Travel Card - Position 6 (Bottom Right) - 2x1 */}
       <motion.div
         variants={item}
         className="col-span-1 md:col-span-2 bg-black text-white rounded-3xl overflow-hidden relative group cursor-pointer min-h-[200px]"

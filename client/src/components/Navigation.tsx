@@ -8,9 +8,9 @@ export function Navigation() {
   const links = [
     { href: "/", label: "Home" },
     { href: "/resume", label: "Resume" },
-    { href: "/cat", label: "My Cat" },
     { href: "/blog", label: "Blog" },
     { href: "/travel", label: "Travel" },
+    { href: "/cat", label: "My Cat" },
   ];
 
   return (
