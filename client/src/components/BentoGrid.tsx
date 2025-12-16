@@ -29,7 +29,7 @@ export function BentoGrid() {
       animate="show"
       className="grid grid-cols-1 md:grid-cols-4 gap-4 max-w-4xl mx-auto p-4 pt-24"
     >
-      {/* Bio / Avatar Card - 2x2 */}
+      {/* Bio / Avatar Card - 2x2 - Position 1 */}
       <motion.div
         variants={item}
         className="col-span-1 md:col-span-2 row-span-2 bg-card border rounded-3xl p-6 flex flex-col justify-between overflow-hidden relative group hover:shadow-lg transition-shadow duration-300"
@@ -62,10 +62,26 @@ export function BentoGrid() {
         <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-blue-500/10 to-purple-500/10 blur-3xl rounded-full -mr-16 -mt-16 pointer-events-none" />
       </motion.div>
 
-      {/* Resume Card - High Priority (Top Right) - 2x1 */}
+      {/* Let's Talk - Position 2 (Top Right) - 2x1 */}
       <motion.div
         variants={item}
-        className="col-span-1 md:col-span-2 bg-white border rounded-3xl overflow-hidden relative group cursor-pointer h-64 md:h-auto"
+        className="col-span-1 md:col-span-2 bg-[#2a2a2a] text-white rounded-3xl p-6 flex flex-row justify-between items-center group cursor-pointer min-h-[160px]"
+      >
+          <div className="space-y-2">
+            <h3 className="font-display font-bold text-3xl">Let's Talk</h3>
+            <p className="text-xs text-white/60">
+              Open for collaborations
+            </p>
+          </div>
+          <div className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center group-hover:bg-white group-hover:text-black transition-colors">
+            <ArrowUpRight size={24} />
+          </div>
+      </motion.div>
+
+      {/* Resume Card - Position 3 (Middle Right) - 2x1 */}
+      <motion.div
+        variants={item}
+        className="col-span-1 md:col-span-2 bg-white border rounded-3xl overflow-hidden relative group cursor-pointer min-h-[200px]"
       >
         <Link href="/resume">
           <div className="absolute inset-0 block">
@@ -89,17 +105,43 @@ export function BentoGrid() {
                 <p className="text-sm text-black/70 font-medium">
                   Senior Product Designer @ TechFlow AI
                 </p>
-                <div className="flex gap-2 mt-3">
-                  <span className="text-xs bg-black/5 px-2 py-1 rounded-md text-black/60 font-mono">React</span>
-                  <span className="text-xs bg-black/5 px-2 py-1 rounded-md text-black/60 font-mono">Design Systems</span>
-                </div>
               </div>
             </div>
           </div>
         </Link>
       </motion.div>
 
-      {/* Travel Card - Middle Right - 2x1 */}
+      {/* Blog/AI Card - Position 4 (Bottom Left) - 2x1 */}
+      <motion.div
+        variants={item}
+        className="col-span-1 md:col-span-2 bg-secondary rounded-3xl overflow-hidden relative group cursor-pointer min-h-[200px]"
+      >
+        <Link href="/blog">
+          <div className="absolute inset-0 block">
+             <img
+              src={aiImage}
+              alt="AI"
+              className="absolute inset-0 w-full h-full object-cover opacity-80 transition-transform duration-700 group-hover:scale-105"
+            />
+             <div className="absolute inset-0 bg-black/30 group-hover:bg-black/40 transition-colors" />
+            <div className="absolute inset-0 p-6 flex flex-col justify-end">
+              <div className="flex justify-between items-end w-full">
+                <div>
+                  <h3 className="text-xl font-display font-bold text-white leading-tight mb-1">
+                    Thinking in AI
+                  </h3>
+                  <p className="text-white/70 text-xs">
+                    Generative UI & LLMs
+                  </p>
+                </div>
+                <ArrowUpRight className="text-white opacity-0 group-hover:opacity-100 transition-opacity" />
+              </div>
+            </div>
+          </div>
+        </Link>
+      </motion.div>
+
+      {/* Travel Card - Position 5 (Bottom Right) - 2x1 */}
       <motion.div
         variants={item}
         className="col-span-1 md:col-span-2 bg-black text-white rounded-3xl overflow-hidden relative group cursor-pointer min-h-[200px]"
@@ -129,44 +171,6 @@ export function BentoGrid() {
             </div>
           </div>
         </Link>
-      </motion.div>
-
-      {/* Blog/AI Card - Lower Priority - 1x1 */}
-      <motion.div
-        variants={item}
-        className="col-span-1 bg-secondary rounded-3xl overflow-hidden relative group cursor-pointer min-h-[200px]"
-      >
-        <Link href="/blog">
-          <div className="absolute inset-0 block">
-             <img
-              src={aiImage}
-              alt="AI"
-              className="absolute inset-0 w-full h-full object-cover opacity-80 transition-transform duration-700 group-hover:scale-105"
-            />
-             <div className="absolute inset-0 bg-black/30 group-hover:bg-black/40 transition-colors" />
-            <div className="absolute inset-0 p-6 flex flex-col justify-end">
-              <h3 className="text-lg font-display font-bold text-white leading-tight mb-1">
-                Thinking in AI
-              </h3>
-              <p className="text-white/70 text-xs">
-                Generative UI & LLMs
-              </p>
-            </div>
-          </div>
-        </Link>
-      </motion.div>
-
-      {/* Contact / Social - 1x1 */}
-      <motion.div
-        variants={item}
-        className="col-span-1 bg-[#2a2a2a] text-white rounded-3xl p-6 flex flex-col justify-center items-center text-center group cursor-pointer"
-      >
-          <div className="space-y-2">
-            <h3 className="font-display font-bold text-2xl">Let's Talk</h3>
-            <p className="text-xs text-white/60">
-              Open for collaborations
-            </p>
-          </div>
       </motion.div>
     </motion.div>
   );
