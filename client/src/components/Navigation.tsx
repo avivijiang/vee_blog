@@ -1,16 +1,18 @@
 import { Link, useLocation } from "wouter";
 import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 
 export function Navigation() {
   const [location] = useLocation();
+  const { t } = useTranslation();
 
   const links = [
-    { href: "/", label: "Home" },
-    { href: "/resume", label: "Resume" },
-    { href: "/blog", label: "Blog" },
-    { href: "/travel", label: "Travel" },
-    { href: "/cat", label: "My Cat" },
+    { href: "/", label: t("nav.home") },
+    { href: "/resume", label: t("nav.resume") },
+    { href: "/blog", label: t("nav.blog") },
+    { href: "/travel", label: t("nav.travel") },
+    { href: "/cat", label: t("nav.cat") },
   ];
 
   return (

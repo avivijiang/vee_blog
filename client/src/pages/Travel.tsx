@@ -1,6 +1,8 @@
 import { Navigation } from "@/components/Navigation";
+import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import { motion } from "framer-motion";
 import { useQuery } from "@tanstack/react-query";
+import { useTranslation } from "react-i18next";
 
 interface TravelPost {
   id: number;
@@ -11,6 +13,7 @@ interface TravelPost {
 }
 
 export default function Travel() {
+  const { t } = useTranslation();
   const { data: posts = [], isLoading } = useQuery<TravelPost[]>({
     queryKey: ["/api/travel"],
     queryFn: async () => {
@@ -23,6 +26,7 @@ export default function Travel() {
   return (
     <div className="min-h-screen bg-background bg-grain">
       <Navigation />
+      <LanguageSwitcher />
       <main className="container mx-auto px-4 pt-32 pb-12">
         <div className="max-w-2xl mx-auto mb-16 text-center">
            <motion.h1 
@@ -30,7 +34,7 @@ export default function Travel() {
              animate={{ opacity: 1, y: 0 }}
              className="text-4xl md:text-5xl font-display font-bold mb-4"
            >
-             Wanderlust
+             {t("travel.title")}
            </motion.h1>
            <motion.p 
              initial={{ opacity: 0 }}
@@ -38,12 +42,12 @@ export default function Travel() {
              transition={{ delay: 0.2 }}
              className="text-muted-foreground text-lg"
            >
-             A visual journal of places that left a mark.
+             {t("travel.subtitle")}
            </motion.p>
         </div>
 
         {isLoading ? (
-          <div className="text-center text-muted-foreground">Loading travel posts...</div>
+          <div className="text-center text-muted-foreground">{t("travel.loading")}</div>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {posts.map((post, index) => (

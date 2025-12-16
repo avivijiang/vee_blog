@@ -1,6 +1,7 @@
 import { Navigation } from "@/components/Navigation";
+import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import { motion } from "framer-motion";
-import { Badge } from "@/components/ui/badge";
+import { useTranslation } from "react-i18next";
 
 const experiences = [
   {
@@ -27,17 +28,20 @@ const experiences = [
 ];
 
 export default function Resume() {
+  const { t } = useTranslation();
+
   return (
     <div className="min-h-screen bg-background bg-grain">
       <Navigation />
+      <LanguageSwitcher />
       <main className="container mx-auto px-4 pt-32 pb-12 max-w-2xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          <h1 className="text-4xl font-display font-bold mb-2">Resume</h1>
-          <p className="text-muted-foreground mb-12">My professional journey and skills.</p>
+          <h1 className="text-4xl font-display font-bold mb-2">{t("resume.title")}</h1>
+          <p className="text-muted-foreground mb-12">{t("resume.subtitle")}</p>
         </motion.div>
 
         <div className="space-y-12">
@@ -73,10 +77,10 @@ export default function Resume() {
           transition={{ delay: 0.6 }}
           className="mt-16 p-6 bg-secondary/50 rounded-2xl"
         >
-          <h3 className="font-display font-bold text-xl mb-4">Skills</h3>
+          <h3 className="font-display font-bold text-xl mb-4">{t("resume.skills")}</h3>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4 text-sm">
              <div>
-               <h4 className="font-bold mb-2 opacity-70">Design</h4>
+               <h4 className="font-bold mb-2 opacity-70">{t("resume.design")}</h4>
                <ul className="space-y-1 text-muted-foreground">
                  <li>UI/UX Design</li>
                  <li>Design Systems</li>
@@ -85,7 +89,7 @@ export default function Resume() {
                </ul>
              </div>
              <div>
-               <h4 className="font-bold mb-2 opacity-70">Development</h4>
+               <h4 className="font-bold mb-2 opacity-70">{t("resume.development")}</h4>
                <ul className="space-y-1 text-muted-foreground">
                  <li>React / Next.js</li>
                  <li>TypeScript</li>
@@ -94,7 +98,7 @@ export default function Resume() {
                </ul>
              </div>
              <div>
-               <h4 className="font-bold mb-2 opacity-70">Tools</h4>
+               <h4 className="font-bold mb-2 opacity-70">{t("resume.tools")}</h4>
                <ul className="space-y-1 text-muted-foreground">
                  <li>Figma</li>
                  <li>VS Code</li>

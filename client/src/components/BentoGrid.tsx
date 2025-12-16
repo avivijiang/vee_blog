@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
-import { ArrowUpRight, Github, Twitter, Linkedin, Briefcase, Cat, MapPin } from "lucide-react";
+import { ArrowUpRight, Github, Twitter, Linkedin, Briefcase, Cat } from "lucide-react";
 import { Link } from "wouter";
+import { useTranslation } from "react-i18next";
 import avatarImage from "@assets/generated_images/professional_minimalist_avatar.png";
 import travelImage from "@assets/generated_images/scenic_mountain_landscape_for_travel_blog.png";
 import aiImage from "@assets/generated_images/abstract_digital_art_for_ai_blog_section.png";
@@ -23,6 +24,8 @@ const item = {
 };
 
 export function BentoGrid() {
+  const { t } = useTranslation();
+
   return (
     <motion.div
       variants={container}
@@ -42,11 +45,10 @@ export function BentoGrid() {
             className="w-16 h-16 rounded-full border-2 border-white/10 mb-4 shadow-md"
           />
           <h1 className="text-3xl font-display font-bold mb-2 tracking-tight">
-            Hi, I'm Alex.
+            {t("home.greeting")}
           </h1>
           <p className="text-muted-foreground text-sm leading-relaxed">
-            I'm a Design Engineer exploring the intersection of AI, design, and
-            storytelling. Currently building digital gardens and breaking things.
+            {t("home.bio")}
           </p>
         </div>
         <div className="flex gap-4 mt-6 z-10">
@@ -74,9 +76,9 @@ export function BentoGrid() {
              </div>
           </div>
           <div>
-            <h3 className="font-display font-bold text-lg leading-tight">Let's Talk</h3>
+            <h3 className="font-display font-bold text-lg leading-tight">{t("home.letsTalk")}</h3>
             <p className="text-[10px] text-white/60 mt-1">
-              Collaborate
+              {t("home.collaborate")}
             </p>
           </div>
       </motion.div>
@@ -126,9 +128,9 @@ export function BentoGrid() {
               </div>
               
               <div>
-                <h3 className="font-display font-bold text-2xl text-black mb-1">Resume & Experience</h3>
+                <h3 className="font-display font-bold text-2xl text-black mb-1">{t("home.resume")}</h3>
                 <p className="text-sm text-black/70 font-medium">
-                  Senior Product Designer @ TechFlow AI
+                  {t("home.currentRole")}
                 </p>
               </div>
             </div>
@@ -153,10 +155,10 @@ export function BentoGrid() {
               <div className="flex justify-between items-end w-full">
                 <div>
                   <h3 className="text-xl font-display font-bold text-white leading-tight mb-1">
-                    Thinking in AI
+                    {t("home.thinkingAI")}
                   </h3>
                   <p className="text-white/70 text-xs">
-                    Generative UI & LLMs
+                    {t("home.aiSubtitle")}
                   </p>
                 </div>
                 <ArrowUpRight className="text-white opacity-0 group-hover:opacity-100 transition-opacity" />
@@ -181,16 +183,16 @@ export function BentoGrid() {
             <div className="absolute inset-0 p-6 flex flex-col justify-between">
               <div className="flex justify-between items-start">
                 <span className="px-3 py-1 bg-white/20 backdrop-blur-md rounded-full text-xs font-medium uppercase tracking-wider">
-                  Journal
+                  {t("home.journal")}
                 </span>
                 <ArrowUpRight className="text-white opacity-0 group-hover:opacity-100 transition-opacity" />
               </div>
               <div>
                 <h3 className="text-xl font-display font-bold mb-1">
-                  Wanderlust
+                  {t("home.wanderlust")}
                 </h3>
                 <p className="text-white/80 text-xs">
-                  Reflections from the road less traveled.
+                  {t("home.travelSubtitle")}
                 </p>
               </div>
             </div>
