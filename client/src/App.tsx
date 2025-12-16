@@ -8,12 +8,14 @@ import Home from "@/pages/Home";
 import Resume from "@/pages/Resume";
 import Blog from "@/pages/Blog";
 import Travel from "@/pages/Travel";
+import Cat from "@/pages/Cat";
 
 function Router() {
   return (
     <Switch>
       <Route path="/" component={Home} />
       <Route path="/resume" component={Resume} />
+      <Route path="/cat" component={Cat} />
       <Route path="/blog" component={Blog} />
       <Route path="/travel" component={Travel} />
       <Route component={NotFound} />

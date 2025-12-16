@@ -7,8 +7,9 @@ export function Navigation() {
 
   const links = [
     { href: "/", label: "Home" },
-    { href: "/blog", label: "Blog" },
     { href: "/resume", label: "Resume" },
+    { href: "/cat", label: "My Cat" },
+    { href: "/blog", label: "Blog" },
     { href: "/travel", label: "Travel" },
   ];
 
@@ -21,7 +22,7 @@ export function Navigation() {
             <Link key={link.href} href={link.href}>
               <a
                 className={cn(
-                  "relative px-4 py-2 text-sm font-medium transition-colors duration-200 rounded-full",
+                  "relative px-4 py-2 text-sm font-medium transition-colors duration-200 rounded-full whitespace-nowrap",
                   isActive
                     ? "text-black dark:text-white"
                     : "text-neutral-500 hover:text-black dark:text-neutral-400 dark:hover:text-white"
