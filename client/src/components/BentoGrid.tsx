@@ -1,9 +1,10 @@
 import { motion } from "framer-motion";
-import { ArrowUpRight, Github, Twitter, Linkedin, Mail } from "lucide-react";
+import { ArrowUpRight, Github, Twitter, Linkedin, Briefcase } from "lucide-react";
 import { Link } from "wouter";
 import avatarImage from "@assets/generated_images/professional_minimalist_avatar.png";
 import travelImage from "@assets/generated_images/scenic_mountain_landscape_for_travel_blog.png";
 import aiImage from "@assets/generated_images/abstract_digital_art_for_ai_blog_section.png";
+import resumeImage from "@assets/generated_images/minimalist_workspace_photography_for_resume_card.png";
 
 const container = {
   hidden: { opacity: 0 },
@@ -28,7 +29,7 @@ export function BentoGrid() {
       animate="show"
       className="grid grid-cols-1 md:grid-cols-4 gap-4 max-w-4xl mx-auto p-4 pt-24"
     >
-      {/* Bio / Avatar Card */}
+      {/* Bio / Avatar Card - 2x2 */}
       <motion.div
         variants={item}
         className="col-span-1 md:col-span-2 row-span-2 bg-card border rounded-3xl p-6 flex flex-col justify-between overflow-hidden relative group hover:shadow-lg transition-shadow duration-300"
@@ -61,30 +62,67 @@ export function BentoGrid() {
         <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-blue-500/10 to-purple-500/10 blur-3xl rounded-full -mr-16 -mt-16 pointer-events-none" />
       </motion.div>
 
-      {/* Travel Card */}
+      {/* Resume Card - High Priority (Top Right) - 2x1 */}
       <motion.div
         variants={item}
-        className="col-span-1 md:col-span-2 bg-black text-white rounded-3xl overflow-hidden relative group cursor-pointer h-64 md:h-auto"
+        className="col-span-1 md:col-span-2 bg-white border rounded-3xl overflow-hidden relative group cursor-pointer h-64 md:h-auto"
+      >
+        <Link href="/resume">
+          <div className="absolute inset-0 block">
+            <img 
+              src={resumeImage}
+              alt="Workspace"
+              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-90"
+            />
+            <div className="absolute inset-0 bg-white/60 group-hover:bg-white/40 transition-colors backdrop-blur-[2px] group-hover:backdrop-blur-none" />
+            
+            <div className="absolute inset-0 p-6 flex flex-col justify-between">
+              <div className="flex justify-between items-start">
+                <div className="w-10 h-10 bg-black text-white rounded-full flex items-center justify-center shadow-sm">
+                  <Briefcase size={20} />
+                </div>
+                <ArrowUpRight className="text-black opacity-0 group-hover:opacity-100 transition-opacity" />
+              </div>
+              
+              <div>
+                <h3 className="font-display font-bold text-2xl text-black mb-1">Resume & Experience</h3>
+                <p className="text-sm text-black/70 font-medium">
+                  Senior Product Designer @ TechFlow AI
+                </p>
+                <div className="flex gap-2 mt-3">
+                  <span className="text-xs bg-black/5 px-2 py-1 rounded-md text-black/60 font-mono">React</span>
+                  <span className="text-xs bg-black/5 px-2 py-1 rounded-md text-black/60 font-mono">Design Systems</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </Link>
+      </motion.div>
+
+      {/* Travel Card - Middle Right - 2x1 */}
+      <motion.div
+        variants={item}
+        className="col-span-1 md:col-span-2 bg-black text-white rounded-3xl overflow-hidden relative group cursor-pointer min-h-[200px]"
       >
         <Link href="/travel">
           <div className="absolute inset-0 block">
             <img
               src={travelImage}
               alt="Travel"
-              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-60"
+              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-60 group-hover:opacity-40"
             />
             <div className="absolute inset-0 p-6 flex flex-col justify-between">
               <div className="flex justify-between items-start">
                 <span className="px-3 py-1 bg-white/20 backdrop-blur-md rounded-full text-xs font-medium uppercase tracking-wider">
                   Journal
                 </span>
-                <ArrowUpRight className="text-white opacity-0 group-hover:opacity-100 transition-opacity transform group-hover:translate-x-1 group-hover:-translate-y-1" />
+                <ArrowUpRight className="text-white opacity-0 group-hover:opacity-100 transition-opacity" />
               </div>
               <div>
-                <h3 className="text-2xl font-display font-bold mb-1">
+                <h3 className="text-xl font-display font-bold mb-1">
                   Wanderlust
                 </h3>
-                <p className="text-white/80 text-sm">
+                <p className="text-white/80 text-xs">
                   Reflections from the road less traveled.
                 </p>
               </div>
@@ -93,63 +131,38 @@ export function BentoGrid() {
         </Link>
       </motion.div>
 
-      {/* Blog/AI Card */}
+      {/* Blog/AI Card - Lower Priority - 1x1 */}
       <motion.div
         variants={item}
-        className="col-span-1 md:col-span-2 bg-secondary rounded-3xl overflow-hidden relative group cursor-pointer min-h-[200px]"
+        className="col-span-1 bg-secondary rounded-3xl overflow-hidden relative group cursor-pointer min-h-[200px]"
       >
         <Link href="/blog">
           <div className="absolute inset-0 block">
              <img
               src={aiImage}
               alt="AI"
-              className="absolute inset-0 w-full h-full object-cover opacity-90 transition-transform duration-700 group-hover:scale-105"
+              className="absolute inset-0 w-full h-full object-cover opacity-80 transition-transform duration-700 group-hover:scale-105"
             />
-             <div className="absolute inset-0 bg-black/40 group-hover:bg-black/50 transition-colors" />
+             <div className="absolute inset-0 bg-black/30 group-hover:bg-black/40 transition-colors" />
             <div className="absolute inset-0 p-6 flex flex-col justify-end">
-              <div className="flex justify-between items-end">
-                <div>
-                  <h3 className="text-2xl font-display font-bold text-white mb-1">
-                    Thinking in AI
-                  </h3>
-                  <p className="text-white/80 text-sm max-w-[80%]">
-                    Explorations into Large Language Models and Generative Art.
-                  </p>
-                </div>
-                <ArrowUpRight className="text-white opacity-0 group-hover:opacity-100 transition-opacity" />
-              </div>
-            </div>
-          </div>
-        </Link>
-      </motion.div>
-
-      {/* Resume Link */}
-      <motion.div
-        variants={item}
-        className="col-span-1 bg-white border rounded-3xl p-6 flex flex-col justify-between group hover:border-black/20 transition-colors cursor-pointer"
-      >
-        <Link href="/resume">
-          <div className="h-full flex flex-col justify-between">
-            <div className="w-10 h-10 bg-neutral-100 rounded-full flex items-center justify-center group-hover:bg-black group-hover:text-white transition-colors">
-              <Mail size={20} />
-            </div>
-            <div>
-              <h3 className="font-display font-bold text-lg">Resume</h3>
-              <p className="text-xs text-muted-foreground mt-1">
-                Experience & Skills
+              <h3 className="text-lg font-display font-bold text-white leading-tight mb-1">
+                Thinking in AI
+              </h3>
+              <p className="text-white/70 text-xs">
+                Generative UI & LLMs
               </p>
             </div>
           </div>
         </Link>
       </motion.div>
 
-      {/* Contact / Social */}
+      {/* Contact / Social - 1x1 */}
       <motion.div
         variants={item}
         className="col-span-1 bg-[#2a2a2a] text-white rounded-3xl p-6 flex flex-col justify-center items-center text-center group cursor-pointer"
       >
           <div className="space-y-2">
-            <h3 className="font-display font-bold text-3xl">Let's Talk</h3>
+            <h3 className="font-display font-bold text-2xl">Let's Talk</h3>
             <p className="text-xs text-white/60">
               Open for collaborations
             </p>
