@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { useQuery } from "@tanstack/react-query";
 import { useTranslation } from "react-i18next";
-import aiImage from "@assets/generated_images/abstract_digital_art_for_ai_blog_section.png";
+import aiImage from "@assets/generated_images/ai_blog.jpg";
 
 interface BlogPost {
   id: number;

@@ -3,9 +3,9 @@ import { ArrowUpRight, Github, Twitter, Linkedin, Briefcase, Cat } from "lucide-
 import { Link } from "wouter";
 import { useTranslation } from "react-i18next";
 import avatarImage from "@assets/cat_pipi_optimized.jpg";
-import travelImage from "@assets/generated_images/scenic_mountain_landscape_for_travel_blog.png";
-import aiImage from "@assets/generated_images/abstract_digital_art_for_ai_blog_section.png";
-import resumeImage from "@assets/generated_images/minimalist_workspace_photography_for_resume_card.png";
+import travelImage from "@assets/generated_images/travel_bg.jpg";
+import aiImage from "@assets/generated_images/ai_blog.jpg";
+import resumeImage from "@assets/generated_images/resume_bg.jpg";
 import catImage from "@assets/IMG_2364_1767170067453.JPG";
 
 const container = {
