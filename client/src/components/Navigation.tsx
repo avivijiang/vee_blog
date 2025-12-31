@@ -21,8 +21,9 @@ export function Navigation() {
         {links.map((link) => {
           const isActive = location === link.href;
           return (
-            <Link key={link.href} href={link.href}>
-              <a
+            <Link 
+                key={link.href} 
+                href={link.href}
                 className={cn(
                   "relative px-4 py-2 text-sm font-medium transition-colors duration-200 rounded-full whitespace-nowrap",
                   isActive
@@ -38,7 +39,6 @@ export function Navigation() {
                   />
                 )}
                 {link.label}
-              </a>
             </Link>
           );
         })}
