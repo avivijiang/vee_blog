@@ -3,9 +3,9 @@ import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import { ExternalLink } from "lucide-react";
-import kashgarImage from "@assets/stock_images/kashgar_old_city_anc_363e5a43.jpg";
-import switzerlandImage from "@assets/stock_images/switzerland_alps_mou_60eaaf85.jpg";
-import parisImage from "@assets/stock_images/paris_france_eiffel__aa21ac6f.jpg";
+import kashgarImage from "@assets/travel_kashgar.jpg";
+import switzerlandImage from "@assets/travel_switzerland.jpg";
+import parisImage from "@assets/travel_paris.jpg";
 
 interface TravelPost {
   id: number;
