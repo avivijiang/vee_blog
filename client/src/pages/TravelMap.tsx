@@ -5,14 +5,23 @@ import { useTranslation } from "react-i18next";
 import { Plane, MapPin, Globe, Flag } from "lucide-react";
 
 const visitedCountries = [
-  { name: "新加坡", nameEn: "Singapore", flag: "🇸🇬", region: "东南亚" },
-  { name: "泰国", nameEn: "Thailand", flag: "🇹🇭", region: "东南亚" },
-  { name: "法国", nameEn: "France", flag: "🇫🇷", region: "欧洲" },
-  { name: "意大利", nameEn: "Italy", flag: "🇮🇹", region: "欧洲" },
-  { name: "瑞士", nameEn: "Switzerland", flag: "🇨🇭", region: "欧洲" },
-  { name: "尼泊尔", nameEn: "Nepal", flag: "🇳🇵", region: "南亚" },
-  { name: "日本", nameEn: "Japan", flag: "🇯🇵", region: "东亚" },
-  { name: "中国", nameEn: "China", flag: "🇨🇳", region: "东亚" },
+  // 东亚
+  { name: "中国", nameEn: "China", flag: "🇨🇳", region: "东亚", regionEn: "East Asia" },
+  { name: "日本", nameEn: "Japan", flag: "🇯🇵", region: "东亚", regionEn: "East Asia" },
+  // 东南亚
+  { name: "新加坡", nameEn: "Singapore", flag: "🇸🇬", region: "东南亚", regionEn: "Southeast Asia" },
+  { name: "泰国", nameEn: "Thailand", flag: "🇹🇭", region: "东南亚", regionEn: "Southeast Asia" },
+  // 南亚
+  { name: "尼泊尔", nameEn: "Nepal", flag: "🇳🇵", region: "南亚", regionEn: "South Asia" },
+  // 中东
+  { name: "土耳其", nameEn: "Turkey", flag: "🇹🇷", region: "中东", regionEn: "Middle East" },
+  { name: "阿联酋", nameEn: "UAE", flag: "🇦🇪", region: "中东", regionEn: "Middle East" },
+  // 非洲
+  { name: "埃及", nameEn: "Egypt", flag: "🇪🇬", region: "非洲", regionEn: "Africa" },
+  // 欧洲
+  { name: "法国", nameEn: "France", flag: "🇫🇷", region: "欧洲", regionEn: "Europe" },
+  { name: "意大利", nameEn: "Italy", flag: "🇮🇹", region: "欧洲", regionEn: "Europe" },
+  { name: "瑞士", nameEn: "Switzerland", flag: "🇨🇭", region: "欧洲", regionEn: "Europe" },
 ];
 
 const chinaProvinces = [
@@ -31,11 +40,20 @@ export default function TravelMap() {
   const isZh = i18n.language === "zh";
 
   const stats = {
-    countries: 8,
+    countries: 11,
     provinces: chinaProvinces.length,
     totalProvinces: 34,
-    continents: 3,
+    continents: 5,
   };
+
+  const regions = [
+    { name: "东亚", nameEn: "East Asia" },
+    { name: "东南亚", nameEn: "Southeast Asia" },
+    { name: "南亚", nameEn: "South Asia" },
+    { name: "中东", nameEn: "Middle East" },
+    { name: "非洲", nameEn: "Africa" },
+    { name: "欧洲", nameEn: "Europe" },
+  ];
 
   return (
     <div className="min-h-screen bg-gradient-animated bg-blobs bg-grain">
@@ -96,33 +114,39 @@ export default function TravelMap() {
               <Globe className="w-6 h-6" />
               {isZh ? "世界足迹" : "World Footprints"}
             </h2>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-              {visitedCountries.map((country, index) => (
-                <motion.div
-                  key={country.nameEn}
-                  initial={{ opacity: 0, scale: 0.8, rotate: -5 }}
-                  animate={{ opacity: 1, scale: 1, rotate: 0 }}
-                  transition={{ delay: index * 0.05 + 0.3 }}
-                  className="relative bg-gradient-to-br from-amber-50 to-orange-50 rounded-xl p-4 border-2 border-amber-200/50 shadow-md hover:shadow-lg transition-shadow group overflow-hidden"
-                >
-                  <div className="absolute top-0 right-0 w-16 h-16 bg-amber-100/50 rounded-full -mr-8 -mt-8" />
-                  <div className="absolute bottom-0 left-0 w-12 h-12 bg-orange-100/50 rounded-full -ml-6 -mb-6" />
-                  <div className="relative">
-                    <div className="text-4xl mb-2">{country.flag}</div>
-                    <div className="font-display font-bold text-lg">
-                      {isZh ? country.name : country.nameEn}
-                    </div>
-                    <div className="text-xs text-amber-700/70 mt-1 uppercase tracking-wider">
-                      {country.region}
-                    </div>
-                    <div className="absolute top-0 right-0 opacity-20 group-hover:opacity-40 transition-opacity">
-                      <svg className="w-8 h-8 text-amber-600" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M12 2L14.09 8.26L20 9.27L15.55 13.97L16.91 20L12 16.9L7.09 20L8.45 13.97L4 9.27L9.91 8.26L12 2Z" />
-                      </svg>
+            <div className="space-y-6">
+              {regions.map((region) => {
+                const regionCountries = visitedCountries.filter(c => c.region === region.name);
+                if (regionCountries.length === 0) return null;
+                return (
+                  <div key={region.name}>
+                    <h3 className="text-sm font-bold text-muted-foreground uppercase tracking-wider mb-3 flex items-center gap-2">
+                      <span className="w-2 h-2 rounded-full bg-amber-500" />
+                      {isZh ? region.name : region.nameEn}
+                      <span className="text-xs font-normal">({regionCountries.length})</span>
+                    </h3>
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+                      {regionCountries.map((country, index) => (
+                        <motion.div
+                          key={country.nameEn}
+                          initial={{ opacity: 0, scale: 0.8 }}
+                          animate={{ opacity: 1, scale: 1 }}
+                          transition={{ delay: index * 0.05 + 0.3 }}
+                          className="relative bg-gradient-to-br from-amber-50 to-orange-50 rounded-xl p-4 border-2 border-amber-200/50 shadow-md hover:shadow-lg transition-shadow group overflow-hidden"
+                        >
+                          <div className="absolute top-0 right-0 w-16 h-16 bg-amber-100/50 rounded-full -mr-8 -mt-8" />
+                          <div className="relative">
+                            <div className="text-3xl mb-2">{country.flag}</div>
+                            <div className="font-display font-bold">
+                              {isZh ? country.name : country.nameEn}
+                            </div>
+                          </div>
+                        </motion.div>
+                      ))}
                     </div>
                   </div>
-                </motion.div>
-              ))}
+                );
+              })}
             </div>
           </motion.div>
 
