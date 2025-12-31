@@ -21,7 +21,7 @@ export default function Cat() {
              <img 
                src={catImage} 
                alt="My Cat" 
-               className="w-full h-full object-cover" style={{ objectPosition: 'calc(50% - 10px) center' }}
+               className="w-full h-full object-cover"
              />
           </div>
           

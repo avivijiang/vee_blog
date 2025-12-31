@@ -93,7 +93,7 @@ export function BentoGrid() {
              <img
               src={catImage}
               alt="My Cat"
-              className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" style={{ objectPosition: 'calc(50% - 5px) center' }}
+              className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
             />
             <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors" />
             <div className="absolute bottom-4 left-4">
