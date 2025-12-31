@@ -8,6 +8,7 @@ import Home from "@/pages/Home";
 import Resume from "@/pages/Resume";
 import Blog from "@/pages/Blog";
 import Travel from "@/pages/Travel";
+import TravelDetail from "@/pages/TravelDetail";
 import Cat from "@/pages/Cat";
 
 function Router() {
@@ -18,6 +19,7 @@ function Router() {
       <Route path="/cat" component={Cat} />
       <Route path="/blog" component={Blog} />
       <Route path="/travel" component={Travel} />
+      <Route path="/travel/detail" component={TravelDetail} />
       <Route component={NotFound} />
     </Switch>
   );

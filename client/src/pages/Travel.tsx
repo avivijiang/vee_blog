@@ -3,6 +3,7 @@ import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import { motion } from "framer-motion";
 import { useQuery } from "@tanstack/react-query";
 import { useTranslation } from "react-i18next";
+import { Link } from "wouter";
 
 interface TravelPost {
   id: number;
@@ -10,6 +11,7 @@ interface TravelPost {
   location: string;
   imageUrl: string;
   description: string;
+  externalUrl?: string;
 }
 
 export default function Travel() {
@@ -59,19 +61,39 @@ export default function Travel() {
                 className="group cursor-pointer"
                 data-testid={`travel-post-${post.id}`}
               >
-                <div className="overflow-hidden rounded-2xl mb-4 relative aspect-[4/5] shadow-lg">
-                  <img 
-                    src={post.imageUrl} 
-                    alt={post.title} 
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors" />
-                  <div className="absolute bottom-4 left-4 text-white">
-                    <p className="text-xs font-medium uppercase tracking-widest mb-1 opacity-80">{post.location}</p>
-                    <h3 className="text-xl font-display font-bold">{post.title}</h3>
-                  </div>
-                </div>
-                <p className="text-sm text-muted-foreground">{post.description}</p>
+                {post.externalUrl ? (
+                  <Link href={`/travel/detail?url=${encodeURIComponent(post.externalUrl)}&title=${encodeURIComponent(post.title)}`}>
+                    <div className="overflow-hidden rounded-2xl mb-4 relative aspect-[4/5] shadow-lg">
+                      <img 
+                        src={post.imageUrl} 
+                        alt={post.title} 
+                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                      />
+                      <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors" />
+                      <div className="absolute bottom-4 left-4 text-white">
+                        <p className="text-xs font-medium uppercase tracking-widest mb-1 opacity-80">{post.location}</p>
+                        <h3 className="text-xl font-display font-bold">{post.title}</h3>
+                      </div>
+                    </div>
+                    <p className="text-sm text-muted-foreground">{post.description}</p>
+                  </Link>
+                ) : (
+                  <>
+                    <div className="overflow-hidden rounded-2xl mb-4 relative aspect-[4/5] shadow-lg">
+                      <img 
+                        src={post.imageUrl} 
+                        alt={post.title} 
+                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                      />
+                      <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors" />
+                      <div className="absolute bottom-4 left-4 text-white">
+                        <p className="text-xs font-medium uppercase tracking-widest mb-1 opacity-80">{post.location}</p>
+                        <h3 className="text-xl font-display font-bold">{post.title}</h3>
+                      </div>
+                    </div>
+                    <p className="text-sm text-muted-foreground">{post.description}</p>
+                  </>
+                )}
               </motion.div>
             ))}
           </div>

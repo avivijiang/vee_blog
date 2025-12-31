@@ -26,6 +26,7 @@ export const travelPosts = pgTable("travel_posts", {
   location: text("location").notNull(),
   imageUrl: text("image_url").notNull(),
   description: text("description").notNull(),
+  externalUrl: text("external_url"),
   createdAt: timestamp("created_at").defaultNow().notNull(),
 });
 
