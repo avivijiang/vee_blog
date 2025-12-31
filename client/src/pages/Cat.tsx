@@ -2,7 +2,7 @@ import { Navigation } from "@/components/Navigation";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
-import catImage from "@assets/generated_images/cute_cat_portrait_for_personal_blog.png";
+import catImage from "@assets/IMG_2364_1767170067453.JPG";
 
 export default function Cat() {
   const { t } = useTranslation();
