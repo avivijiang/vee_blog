@@ -4,8 +4,8 @@ import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import { ExternalLink } from "lucide-react";
 import parisImage from "@assets/travel_paris_fixed.jpg";
-import switzerlandImage from "@assets/travel_switzerland_fixed.jpg";
-import kashgarImage from "@assets/travel_kashgar_fixed.jpg";
+import switzerlandImage from "@assets/travel_switzerland_rotated.jpg";
+import kashgarImage from "@assets/travel_kashgar_rotated.jpg";
 
 interface TravelPost {
   id: number;
