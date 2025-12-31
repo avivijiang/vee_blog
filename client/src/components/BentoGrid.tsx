@@ -42,7 +42,7 @@ export function BentoGrid() {
           <img
             src={avatarImage}
             alt="Avatar"
-            className="w-20 h-20 rounded-full border-2 border-white/20 mb-4 shadow-lg object-cover"
+            className="w-14 h-14 rounded-full border-2 border-white/20 mb-4 shadow-lg object-cover"
           />
           <h1 className="text-3xl font-display font-bold mb-2 tracking-tight">
             {t("home.greeting")}
