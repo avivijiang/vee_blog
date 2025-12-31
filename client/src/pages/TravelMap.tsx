@@ -28,10 +28,10 @@ const chinaProvinces = [
   "北京", "天津", "河北", "辽宁", "吉林", "黑龙江", "上海", "江苏", "浙江", 
   "安徽", "福建", "江西", "山东", "河南", "湖北", "湖南", "广东", "海南",
   "重庆", "四川", "贵州", "云南", "西藏", "陕西", "甘肃", "青海", "内蒙古",
-  "广西", "新疆", "香港", "台湾"
+  "广西", "新疆", "香港"
 ];
 
-const notVisitedProvinces = ["宁夏", "澳门", "山西"];
+const notVisitedProvinces = ["宁夏", "澳门", "山西", "台湾"];
 
 const allProvinces = [...chinaProvinces, ...notVisitedProvinces];
 
