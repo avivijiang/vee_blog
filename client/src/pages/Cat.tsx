@@ -21,7 +21,7 @@ export default function Cat() {
              <img 
                src={catImage} 
                alt="My Cat" 
-               className="w-full h-full object-cover"
+               className="w-full h-full object-cover object-center"
              />
           </div>
           

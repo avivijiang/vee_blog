@@ -45,7 +45,7 @@ const resources = {
 
       // Cat
       "cat.title": "Meet Pipi",
-      "cat.bio": "A playful and mischievous explorer! He loves playing with small balls, enjoys cat treats, and has an adventurous spirit that keeps life interesting.",
+      "cat.bio": "A playful and mischievous little explorer who makes every day an adventure!",
       "cat.breed": "Breed",
       "cat.breedValue": "British Longhair",
       "cat.age": "Age",
@@ -101,7 +101,7 @@ const resources = {
 
       // Cat
       "cat.title": "这是皮皮",
-      "cat.bio": "一只调皮爱玩的小探险家！他喜欢玩小球，最爱吃猫条，具有探索精神，让生活充满乐趣。",
+      "cat.bio": "一只调皮爱玩的小探险家，每天都充满惊喜！",
       "cat.breed": "品种",
       "cat.breedValue": "英国长毛猫",
       "cat.age": "年龄",
