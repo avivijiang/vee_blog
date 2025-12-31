@@ -12,16 +12,16 @@ const resources = {
       "nav.cat": "My Cat",
 
       // Home - Bio
-      "home.greeting": "Hi, I'm Alex.",
-      "home.bio": "I'm a Design Engineer exploring the intersection of AI, design, and storytelling. Currently building digital gardens and breaking things.",
+      "home.greeting": "Hi, I'm Vee.",
+      "home.bio": "I'm a Frontend Developer who loves exploring the world, learning new things, and turning ideas into beautiful web experiences.",
       "home.letsTalk": "Let's Talk",
       "home.collaborate": "Collaborate",
       "home.resume": "Resume & Experience",
-      "home.currentRole": "Senior Product Designer @ TechFlow AI",
+      "home.currentRole": "Frontend Developer",
       "home.thinkingAI": "Thinking in AI",
       "home.aiSubtitle": "Generative UI & LLMs",
       "home.wanderlust": "Wanderlust",
-      "home.travelSubtitle": "Reflections from the road less traveled.",
+      "home.travelSubtitle": "Seeing the world, one journey at a time.",
       "home.journal": "Journal",
 
       // Resume
@@ -66,16 +66,16 @@ const resources = {
       "nav.cat": "我的猫",
 
       // Home - Bio
-      "home.greeting": "你好，我是 Alex。",
-      "home.bio": "我是一名设计工程师，探索 AI、设计和故事叙述的交汇点。目前正在构建数字花园，并不断突破边界。",
+      "home.greeting": "你好，我是 Vee。",
+      "home.bio": "我是一名前端开发工程师，热爱旅行、见识世界，也喜欢学习新事物，把创意变成精美的网页体验。",
       "home.letsTalk": "联系我",
       "home.collaborate": "合作洽谈",
       "home.resume": "简历与经历",
-      "home.currentRole": "高级产品设计师 @ TechFlow AI",
+      "home.currentRole": "前端开发工程师",
       "home.thinkingAI": "AI 思考",
       "home.aiSubtitle": "生成式 UI 与大语言模型",
       "home.wanderlust": "旅行日志",
-      "home.travelSubtitle": "那些留下印记的旅途回忆。",
+      "home.travelSubtitle": "用脚步丈量世界，用心感受每一程。",
       "home.journal": "游记",
 
       // Resume

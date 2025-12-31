@@ -8,7 +8,7 @@ export default function Cat() {
   const { t } = useTranslation();
 
   return (
-    <div className="min-h-screen bg-background bg-grain">
+    <div className="min-h-screen bg-gradient-animated bg-blobs bg-grain">
       <Navigation />
       <LanguageSwitcher />
       <main className="container mx-auto px-4 pt-32 pb-12 max-w-2xl text-center">
@@ -30,7 +30,7 @@ export default function Cat() {
             {t("cat.bio")}
           </p>
 
-          <div className="grid grid-cols-2 gap-4 text-left bg-white p-6 rounded-2xl shadow-sm border border-neutral-100">
+          <div className="grid grid-cols-2 gap-4 text-left bg-white/80 backdrop-blur-sm p-6 rounded-2xl shadow-sm border border-white/50">
              <div>
                <h3 className="font-bold text-sm uppercase tracking-wider text-muted-foreground mb-1">{t("cat.breed")}</h3>
                <p className="font-display font-medium">{t("cat.breedValue")}</p>

@@ -4,7 +4,7 @@ import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-background bg-grain">
+    <div className="min-h-screen bg-gradient-animated bg-blobs bg-grain">
       <Navigation />
       <LanguageSwitcher />
       <main className="container mx-auto px-4 pb-12">

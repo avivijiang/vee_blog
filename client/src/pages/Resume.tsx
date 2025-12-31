@@ -5,25 +5,25 @@ import { useTranslation } from "react-i18next";
 
 const experiences = [
   {
-    role: "Senior Product Designer",
-    company: "TechFlow AI",
-    period: "2023 - Present",
-    description: "Leading the design system team and crafting generative UI experiences.",
-    tags: ["Figma", "React", "AI Strategy"]
-  },
-  {
     role: "Frontend Developer",
-    company: "Creative Studio",
-    period: "2021 - 2023",
-    description: "Built award-winning marketing sites and interactive webGL experiences.",
-    tags: ["Next.js", "Three.js", "WebGL"]
+    company: "Tech Company",
+    period: "2022 - Present",
+    description: "Building modern web applications with React, TypeScript, and cutting-edge frontend technologies.",
+    tags: ["React", "TypeScript", "Tailwind CSS"]
   },
   {
-    role: "UX Researcher",
-    company: "Innovate Lab",
-    period: "2019 - 2021",
-    description: "Conducted user research and usability testing for enterprise software.",
-    tags: ["User Research", "Prototyping"]
+    role: "Web Developer",
+    company: "Digital Agency",
+    period: "2020 - 2022",
+    description: "Developed responsive websites and interactive user interfaces for various clients.",
+    tags: ["JavaScript", "Vue.js", "CSS3"]
+  },
+  {
+    role: "Junior Developer",
+    company: "Startup",
+    period: "2018 - 2020",
+    description: "Started my journey in web development, learning and growing with the team.",
+    tags: ["HTML", "CSS", "JavaScript"]
   }
 ];
 
@@ -31,7 +31,7 @@ export default function Resume() {
   const { t } = useTranslation();
 
   return (
-    <div className="min-h-screen bg-background bg-grain">
+    <div className="min-h-screen bg-gradient-animated bg-blobs bg-grain">
       <Navigation />
       <LanguageSwitcher />
       <main className="container mx-auto px-4 pt-32 pb-12 max-w-2xl">
@@ -75,7 +75,7 @@ export default function Resume() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.6 }}
-          className="mt-16 p-6 bg-secondary/50 rounded-2xl"
+          className="mt-16 p-6 bg-white/80 backdrop-blur-sm rounded-2xl shadow-sm border border-white/50"
         >
           <h3 className="font-display font-bold text-xl mb-4">{t("resume.skills")}</h3>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4 text-sm">
@@ -83,15 +83,15 @@ export default function Resume() {
                <h4 className="font-bold mb-2 opacity-70">{t("resume.design")}</h4>
                <ul className="space-y-1 text-muted-foreground">
                  <li>UI/UX Design</li>
-                 <li>Design Systems</li>
-                 <li>Prototyping</li>
-                 <li>Motion Design</li>
+                 <li>Responsive Design</li>
+                 <li>Figma</li>
+                 <li>Animation</li>
                </ul>
              </div>
              <div>
                <h4 className="font-bold mb-2 opacity-70">{t("resume.development")}</h4>
                <ul className="space-y-1 text-muted-foreground">
-                 <li>React / Next.js</li>
+                 <li>React / Vue.js</li>
                  <li>TypeScript</li>
                  <li>Tailwind CSS</li>
                  <li>Node.js</li>
@@ -100,10 +100,10 @@ export default function Resume() {
              <div>
                <h4 className="font-bold mb-2 opacity-70">{t("resume.tools")}</h4>
                <ul className="space-y-1 text-muted-foreground">
-                 <li>Figma</li>
                  <li>VS Code</li>
-                 <li>Linear</li>
-                 <li>Notion</li>
+                 <li>Git</li>
+                 <li>Webpack / Vite</li>
+                 <li>Docker</li>
                </ul>
              </div>
           </div>

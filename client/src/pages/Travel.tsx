@@ -24,7 +24,7 @@ export default function Travel() {
   });
 
   return (
-    <div className="min-h-screen bg-background bg-grain">
+    <div className="min-h-screen bg-gradient-animated bg-blobs bg-grain">
       <Navigation />
       <LanguageSwitcher />
       <main className="container mx-auto px-4 pt-32 pb-12">
@@ -59,7 +59,7 @@ export default function Travel() {
                 className="group cursor-pointer"
                 data-testid={`travel-post-${post.id}`}
               >
-                <div className="overflow-hidden rounded-2xl mb-4 relative aspect-[4/5]">
+                <div className="overflow-hidden rounded-2xl mb-4 relative aspect-[4/5] shadow-lg">
                   <img 
                     src={post.imageUrl} 
                     alt={post.title} 

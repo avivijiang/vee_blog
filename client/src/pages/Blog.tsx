@@ -27,7 +27,7 @@ export default function Blog() {
   });
 
   return (
-    <div className="min-h-screen bg-background bg-grain">
+    <div className="min-h-screen bg-gradient-animated bg-blobs bg-grain">
       <Navigation />
       <LanguageSwitcher />
       
@@ -59,7 +59,7 @@ export default function Blog() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1 }}
-                className="group cursor-pointer border-b border-border pb-8 last:border-0"
+                className="group cursor-pointer border-b border-border pb-8 last:border-0 bg-white/60 backdrop-blur-sm rounded-2xl p-6 -mx-6 border border-white/50 shadow-sm hover:shadow-md transition-shadow"
                 data-testid={`article-${article.slug}`}
               >
                 <div className="flex items-baseline justify-between mb-2">
