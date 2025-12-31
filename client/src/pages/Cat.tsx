@@ -44,8 +44,12 @@ export default function Cat() {
                <p className="font-display font-medium">{t("cat.favToyValue")}</p>
              </div>
              <div>
-               <h3 className="font-bold text-sm uppercase tracking-wider text-muted-foreground mb-1">{t("cat.superpower")}</h3>
-               <p className="font-display font-medium">{t("cat.superpowerValue")}</p>
+               <h3 className="font-bold text-sm uppercase tracking-wider text-muted-foreground mb-1">{t("cat.favFood")}</h3>
+               <p className="font-display font-medium">{t("cat.favFoodValue")}</p>
+             </div>
+             <div className="col-span-2">
+               <h3 className="font-bold text-sm uppercase tracking-wider text-muted-foreground mb-1">{t("cat.personality")}</h3>
+               <p className="font-display font-medium">{t("cat.personalityValue")}</p>
              </div>
           </div>
         </motion.div>

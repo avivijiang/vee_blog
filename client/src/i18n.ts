@@ -44,16 +44,18 @@ const resources = {
       "travel.loading": "Loading travel posts...",
 
       // Cat
-      "cat.title": "Meet Luna",
-      "cat.bio": "The Chief Morale Officer. She enjoys napping on keyboards, chasing laser pointers, and judging my code reviews.",
+      "cat.title": "Meet Pipi",
+      "cat.bio": "A playful and mischievous explorer! He loves playing with small balls, enjoys cat treats, and has an adventurous spirit that keeps life interesting.",
       "cat.breed": "Breed",
-      "cat.breedValue": "British Shorthair",
+      "cat.breedValue": "British Longhair",
       "cat.age": "Age",
-      "cat.ageValue": "2 Years Old",
+      "cat.ageValue": "1 Year Old",
       "cat.favToy": "Favorite Toy",
-      "cat.favToyValue": "Cardboard Box",
-      "cat.superpower": "Superpower",
-      "cat.superpowerValue": "Purring at 50Hz",
+      "cat.favToyValue": "Small Ball",
+      "cat.favFood": "Favorite Food",
+      "cat.favFoodValue": "Cat Treats",
+      "cat.personality": "Personality",
+      "cat.personalityValue": "Adventurous Explorer",
     }
   },
   zh: {
@@ -98,16 +100,18 @@ const resources = {
       "travel.loading": "正在加载旅行记录...",
 
       // Cat
-      "cat.title": "这是 Luna",
-      "cat.bio": "首席士气官。她喜欢在键盘上打盹、追逐激光笔，以及审判我的代码。",
+      "cat.title": "这是皮皮",
+      "cat.bio": "一只调皮爱玩的小探险家！他喜欢玩小球，最爱吃猫条，具有探索精神，让生活充满乐趣。",
       "cat.breed": "品种",
-      "cat.breedValue": "英国短毛猫",
+      "cat.breedValue": "英国长毛猫",
       "cat.age": "年龄",
-      "cat.ageValue": "2 岁",
+      "cat.ageValue": "1 岁",
       "cat.favToy": "最爱玩具",
-      "cat.favToyValue": "纸箱",
-      "cat.superpower": "超能力",
-      "cat.superpowerValue": "50Hz 呼噜声",
+      "cat.favToyValue": "小球",
+      "cat.favFood": "最爱食物",
+      "cat.favFoodValue": "猫条",
+      "cat.personality": "性格",
+      "cat.personalityValue": "调皮探险家",
     }
   }
 };
