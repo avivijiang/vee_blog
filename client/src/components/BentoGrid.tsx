@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { ArrowUpRight, Github, Twitter, Linkedin, Briefcase, Cat } from "lucide-react";
 import { Link } from "wouter";
 import { useTranslation } from "react-i18next";
-import avatarImage from "@assets/IMG_7020_1767167850452.jpg";
+import avatarImage from "@assets/IMG_2812_1767168444646.JPG";
 import travelImage from "@assets/generated_images/scenic_mountain_landscape_for_travel_blog.png";
 import aiImage from "@assets/generated_images/abstract_digital_art_for_ai_blog_section.png";
 import resumeImage from "@assets/generated_images/minimalist_workspace_photography_for_resume_card.png";
