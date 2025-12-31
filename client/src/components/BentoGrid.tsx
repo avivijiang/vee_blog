@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { ArrowUpRight, Github, Twitter, Linkedin, Briefcase, Cat } from "lucide-react";
 import { Link } from "wouter";
 import { useTranslation } from "react-i18next";
-import avatarImage from "@assets/generated_images/professional_minimalist_avatar.png";
+import avatarImage from "@assets/IMG_7020_1767167850452.jpg";
 import travelImage from "@assets/generated_images/scenic_mountain_landscape_for_travel_blog.png";
 import aiImage from "@assets/generated_images/abstract_digital_art_for_ai_blog_section.png";
 import resumeImage from "@assets/generated_images/minimalist_workspace_photography_for_resume_card.png";
@@ -42,7 +42,7 @@ export function BentoGrid() {
           <img
             src={avatarImage}
             alt="Avatar"
-            className="w-16 h-16 rounded-full border-2 border-white/10 mb-4 shadow-md"
+            className="w-20 h-20 rounded-full border-2 border-white/20 mb-4 shadow-lg object-cover"
           />
           <h1 className="text-3xl font-display font-bold mb-2 tracking-tight">
             {t("home.greeting")}
