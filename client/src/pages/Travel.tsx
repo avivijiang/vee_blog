@@ -86,11 +86,9 @@ export default function Travel() {
              animate={{ opacity: 1 }}
              transition={{ delay: 0.3 }}
            >
-             <Link href="/travel/map">
-               <a className="inline-flex items-center gap-2 px-4 py-2 bg-black text-white rounded-full hover:bg-neutral-800 transition-colors font-medium text-sm">
+             <Link href="/travel/map" className="inline-flex items-center gap-2 px-4 py-2 bg-black text-white rounded-full hover:bg-neutral-800 transition-colors font-medium text-sm">
                  <Map size={16} />
                  {isZh ? "查看旅行足迹" : "View Travel Map"}
-               </a>
              </Link>
            </motion.div>
         </div>
