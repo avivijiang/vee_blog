@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowUpRight, Github, Twitter, Linkedin, Briefcase, Cat } from "lucide-react";
+import { ArrowUpRight, Briefcase, Cat } from "lucide-react";
 import { Link } from "wouter";
 import { useTranslation } from "react-i18next";
 import avatarImage from "@assets/cat_pipi_optimized.jpg";
@@ -51,18 +51,7 @@ export function BentoGrid() {
             {t("home.bio")}
           </p>
         </div>
-        <div className="flex gap-4 mt-6 z-10">
-          <a href="#" className="p-2 bg-secondary rounded-full hover:bg-primary hover:text-primary-foreground transition-colors">
-            <Twitter size={18} />
-          </a>
-          <a href="#" className="p-2 bg-secondary rounded-full hover:bg-primary hover:text-primary-foreground transition-colors">
-            <Github size={18} />
-          </a>
-          <a href="#" className="p-2 bg-secondary rounded-full hover:bg-primary hover:text-primary-foreground transition-colors">
-            <Linkedin size={18} />
-          </a>
-        </div>
-        <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-blue-500/10 to-purple-500/10 blur-3xl rounded-full -mr-16 -mt-16 pointer-events-none" />
+                <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-blue-500/10 to-purple-500/10 blur-3xl rounded-full -mr-16 -mt-16 pointer-events-none" />
       </motion.div>
 
       {/* Let's Talk - Position 2 (Top Right) - 1x1 */}
