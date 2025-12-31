@@ -2,7 +2,8 @@ import { Navigation } from "@/components/Navigation";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
-import { ExternalLink } from "lucide-react";
+import { ExternalLink, Map } from "lucide-react";
+import { Link } from "wouter";
 import parisImage from "@assets/travel_paris_rotated.jpg";
 import switzerlandImage from "@assets/travel_switzerland_rotated.jpg";
 import kashgarImage from "@assets/travel_kashgar_fixed.jpg";
@@ -76,10 +77,22 @@ export default function Travel() {
              initial={{ opacity: 0 }}
              animate={{ opacity: 1 }}
              transition={{ delay: 0.2 }}
-             className="text-muted-foreground text-lg"
+             className="text-muted-foreground text-lg mb-6"
            >
              {t("travel.subtitle")}
            </motion.p>
+           <motion.div
+             initial={{ opacity: 0 }}
+             animate={{ opacity: 1 }}
+             transition={{ delay: 0.3 }}
+           >
+             <Link href="/travel/map">
+               <a className="inline-flex items-center gap-2 px-4 py-2 bg-black text-white rounded-full hover:bg-neutral-800 transition-colors font-medium text-sm">
+                 <Map size={16} />
+                 {isZh ? "查看旅行足迹" : "View Travel Map"}
+               </a>
+             </Link>
+           </motion.div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

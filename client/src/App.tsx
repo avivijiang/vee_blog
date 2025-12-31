@@ -9,6 +9,7 @@ import Resume from "@/pages/Resume";
 import Blog from "@/pages/Blog";
 import Travel from "@/pages/Travel";
 import TravelDetail from "@/pages/TravelDetail";
+import TravelMap from "@/pages/TravelMap";
 import Cat from "@/pages/Cat";
 
 function Router() {
@@ -20,6 +21,7 @@ function Router() {
       <Route path="/blog" component={Blog} />
       <Route path="/travel" component={Travel} />
       <Route path="/travel/detail" component={TravelDetail} />
+      <Route path="/travel/map" component={TravelMap} />
       <Route component={NotFound} />
     </Switch>
   );
