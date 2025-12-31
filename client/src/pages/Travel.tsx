@@ -3,7 +3,7 @@ import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import { ExternalLink } from "lucide-react";
-import kashgarImage from "@assets/stock_images/kashgar_xinjiang_chi_9cabb5b4.jpg";
+import kashgarImage from "@assets/stock_images/kashgar_old_city_anc_363e5a43.jpg";
 import switzerlandImage from "@assets/stock_images/switzerland_alps_mou_60eaaf85.jpg";
 import parisImage from "@assets/stock_images/paris_france_eiffel__aa21ac6f.jpg";
 
