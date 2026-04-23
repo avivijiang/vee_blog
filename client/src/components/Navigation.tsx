@@ -10,8 +10,8 @@ export function Navigation() {
   const links = [
     { href: "/", label: t("nav.home") },
     { href: "/resume", label: t("nav.resume") },
-    { href: "/blog", label: t("nav.blog") },
-    { href: "/travel", label: t("nav.travel") },
+    // { href: "/blog", label: t("nav.blog") },
+    // { href: "/travel", label: t("nav.travel") },
     { href: "/cat", label: t("nav.cat") },
   ];
 

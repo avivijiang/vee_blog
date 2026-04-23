@@ -1,8 +1,9 @@
 import { motion } from "framer-motion";
-import { ArrowUpRight, Briefcase, Cat } from "lucide-react";
+import { ArrowUpRight, Briefcase, Cat, Mail, Check } from "lucide-react";
 import { Link } from "wouter";
 import { useTranslation } from "react-i18next";
-import avatarImage from "@assets/cat_pipi_optimized.jpg";
+import { useState } from "react";
+import avatarImage from "@assets/avatar_150.png";
 import travelImage from "@assets/generated_images/travel_bg.jpg";
 import aiImage from "@assets/generated_images/ai_blog.jpg";
 import resumeImage from "@assets/generated_images/resume_bg.jpg";
@@ -25,6 +26,14 @@ const item = {
 
 export function BentoGrid() {
   const { t } = useTranslation();
+  const [copied, setCopied] = useState(false);
+
+  function copyEmail() {
+    navigator.clipboard.writeText("vivihu@163.com").then(() => {
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    });
+  }
 
   return (
     <motion.div
@@ -42,7 +51,7 @@ export function BentoGrid() {
           <img
             src={avatarImage}
             alt="Avatar"
-            className="w-14 h-14 rounded-full border-2 border-white/20 mb-4 shadow-lg object-cover"
+            className="w-[150px] h-[150px] rounded-full border-2 border-white/20 mb-4 shadow-lg object-cover"
           />
           <h1 className="text-3xl font-display font-bold mb-2 tracking-tight">
             {t("home.greeting")}
@@ -58,18 +67,19 @@ export function BentoGrid() {
       <motion.div
         variants={item}
         className="col-span-1 bg-[#2a2a2a] text-white rounded-3xl p-6 flex flex-col justify-between group cursor-pointer min-h-[160px]"
+        onClick={copyEmail}
       >
-          <div className="flex justify-between items-start">
-             <div className="w-8 h-8 bg-white/10 rounded-full flex items-center justify-center group-hover:bg-white group-hover:text-black transition-colors">
-                <ArrowUpRight size={16} />
-             </div>
+        <div className="flex justify-between items-start">
+          <div className={`w-8 h-8 rounded-full flex items-center justify-center transition-colors ${copied ? "bg-green-500 text-white" : "bg-white/10 group-hover:bg-white group-hover:text-black"}`}>
+            {copied ? <Check size={16} /> : <Mail size={16} />}
           </div>
-          <div>
-            <h3 className="font-display font-bold text-lg leading-tight">{t("home.letsTalk")}</h3>
-            <p className="text-[10px] text-white/60 mt-1">
-              {t("home.collaborate")}
-            </p>
-          </div>
+        </div>
+        <div>
+          <h3 className="font-display font-bold text-lg leading-tight">{t("home.letsTalk")}</h3>
+          <p className={`text-[11px] mt-1 font-mono tracking-tight transition-colors ${copied ? "text-green-400" : "text-white/50 group-hover:text-white/80"}`}>
+            {copied ? (t("home.emailCopied")) : "vivihu@163.com"}
+          </p>
+        </div>
       </motion.div>
 
       {/* My Cat - Position 3 (Top Right) - 1x1 */}
@@ -127,16 +137,16 @@ export function BentoGrid() {
         </Link>
       </motion.div>
 
-      {/* Blog/AI Card - Position 5 (Bottom Left) - 2x1 */}
+      {/* AI Works Card - Position 5 (Bottom Left) - 2x1 */}
       <motion.div
         variants={item}
         className="col-span-1 md:col-span-2 bg-secondary rounded-3xl overflow-hidden relative group cursor-pointer min-h-[200px]"
       >
-        <Link href="/blog">
+        <a href="https://ai-dailynote.com" target="_blank" rel="noopener noreferrer">
           <div className="absolute inset-0 block">
              <img
               src={aiImage}
-              alt="AI"
+              alt="AI Works"
               className="absolute inset-0 w-full h-full object-cover opacity-80 transition-transform duration-700 group-hover:scale-105"
             />
              <div className="absolute inset-0 bg-black/30 group-hover:bg-black/40 transition-colors" />
@@ -144,21 +154,21 @@ export function BentoGrid() {
               <div className="flex justify-between items-end w-full">
                 <div>
                   <h3 className="text-xl font-display font-bold text-white leading-tight mb-1">
-                    {t("home.thinkingAI")}
+                    {t("home.aiWorks")}
                   </h3>
                   <p className="text-white/70 text-xs">
-                    {t("home.aiSubtitle")}
+                    {t("home.aiWorksSubtitle")}
                   </p>
                 </div>
                 <ArrowUpRight className="text-white opacity-0 group-hover:opacity-100 transition-opacity" />
               </div>
             </div>
           </div>
-        </Link>
+        </a>
       </motion.div>
 
       {/* Travel Card - Position 6 (Bottom Right) - 2x1 */}
-      <motion.div
+      {/* <motion.div
         variants={item}
         className="col-span-1 md:col-span-2 bg-black text-white rounded-3xl overflow-hidden relative group cursor-pointer min-h-[200px]"
       >
@@ -187,7 +197,7 @@ export function BentoGrid() {
             </div>
           </div>
         </Link>
-      </motion.div>
+      </motion.div> */}
     </motion.div>
   );
 }
