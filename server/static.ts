@@ -4,7 +4,7 @@ import path from "path";
 
 export function serveStatic(app: Express) {
   // `type: module` 下没有 `__dirname`，并且前端构建产物在项目根目录的 `dist/`
-  const distPath = path.resolve(import.meta.dirname, "..", "dist");
+  const distPath = path.resolve(import.meta.dirname, "public");
   if (!fs.existsSync(distPath)) {
     throw new Error(
       `Could not find the build directory: ${distPath}, make sure to build the client first`,
